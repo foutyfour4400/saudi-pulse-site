@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saudi One | Saudi Arabia's Complete Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-scroll {
+            animation: scroll 20s linear infinite;
+        }
+        .city-content { display: none; }
+        .city-content.active { display: block; }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Language Selector -->
+    <div class="bg-gray-800 text-white p-2 flex justify-end">
+        <select id="languageSelector" class="bg-gray-700 text-white px-3 py-1 rounded">
+            <option value="en">English</option>
+            <option value="ar">العربية</option>
+        </select>
+    </div>
+
+    <!-- Header with Navigation -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-xl">S1</div>
+                <h1 class="ml-3 text-2xl font-bold text-gray-800">Saudi One</h1>
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#news" class="text-gray-800 hover:text-green-600">News</a>
+                <a href="#entertainment" class="text-gray-800 hover:text-green-600">Entertainment</a>
+                <a href="#jobs" class="text-gray-800 hover:text-green-600">Jobs</a>
+                <a href="#offers" class="text-gray-800 hover:text-green-600">Offers</a>
+                <a href="#events" class="text-gray-800 hover:text-green-600">Events</a>
+                <a href="#contact" class="text-gray-800 hover:text-green-600">Contact</a>
+            </nav>
+            <button class="md:hidden text-gray-800">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Moving Banners -->
+    <div class="bg-gray-100 border-y border-gray-200 overflow-hidden">
+        <div class="container mx-auto">
+            <!-- News Banner -->
+            <div class="py-2 flex items-center">
+                <span class="bg-green-600 text-white px-3 py-1 mr-3">Breaking</span>
+                <div class="overflow-hidden whitespace-nowrap">
+                    <div class="animate-scroll inline-block whitespace-nowrap">
+                        <span class="mx-4">Saudi Arabia announces new tourism initiatives</span>
+                        <span class="mx-4">NEOM reveals latest development plans</span>
+                        <span class="mx-4">New entertainment complexes to open in Riyadh next month</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Market Data Banner -->
+            <div class="py-2 bg-gray-800 text-white flex items-center">
+                <span class="bg-yellow-500 px-3 py-1 mr-3">Market</span>
+                <div class="overflow-hidden whitespace-nowrap">
+                    <div class="animate-scroll inline-block whitespace-nowrap">
+                        <span class="mx-4">SAR/USD: 3.75 (+0.2%)</span>
+                        <span class="mx-4">TASI: 12,450 (+1.5%)</span>
+                        <span class="mx-4">Oil Price: $85.23/bbl</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- City Selector -->
+        <div class="mb-8">
+            <h2 class="text-xl font-bold mb-4">Select Your City</h2>
+            <div class="flex flex-wrap gap-2">
+                <button class="city-btn px-4 py-2 bg-green-600 text-white rounded" data-city="riyadh">Riyadh</button>
+                <button class="city-btn px-4 py-2 bg-gray-200 rounded" data-city="jeddah">Jeddah</button>
+                <button class="city-btn px-4 py-2 bg-gray-200 rounded" data-city="dammam">Dammam</button>
+                <button class="city-btn px-4 py-2 bg-gray-200 rounded" data-city="makkah">Makkah</button>
+                <button class="city-btn px-4 py-2 bg-gray-200 rounded" data-city="medina">Medina</button>
+            </div>
+        </div>
+
+        <!-- City Content Sections -->
+        <div id="cityContent">
+            <!-- Riyadh Content (default) -->
+            <div class="city-content active" id="riyadh-content">
+                <section id="news" class="mb-12">
+                    <h2 class="text-2xl font-bold mb-4 border-b pb-2">Latest News in Riyadh</h2>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <article class="bg-white rounded-lg shadow overflow-hidden">
+                            <img src="https://placehold.co/600x400?text=Riyadh+News" alt="Riyadh city skyline with modern buildings" class="w-full h-48 object-cover">
+                            <div class="p-4">
+                                <h3 class="font-bold text-lg mb-2">New Metro Line to Open Next Month</h3>
+                                <p class="text-gray-600 mb-3">The Riyadh Metro announces opening of Blue Line ahead of schedule...</p>
+                                <a href="#" class="text-green-600 font-medium">Read more →</a>
+                            </div>
+                        </article>
+                        <!-- More news articles... -->
+                    </div>
+                </section>
+
+                <section id="entertainment" class="mb-12">
+                    <h2 class="text-2xl font-bold mb-4 border-b pb-2">Entertainment</h2>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-white rounded-lg shadow overflow-hidden">
+                            <img src="https://placehold.co/600x400?text=Kingdom+Tower" alt="Kingdom Tower in Riyadh with shopping mall" class="w-full h-48 object-cover">
+                            <div class="p-4">
+                                <h3 class="font-bold text-lg mb-2">Kingdom Tower Events</h3>
+                                <p class="text-gray-600 mb-3">New winter festival with international performers...</p>
+                                <div class="flex justify-between text-sm text-gray-500">
+                                    <span>Starting: Dec 1</span>
+                                    <span>Price: SAR 75-300</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- More entertainment items... -->
+                    </div>
+                </section>
+            </div>
+
+            <!-- Other city contents would follow same pattern... -->
+        </div>
+
+        <!-- Jobs Section -->
+        <section id="jobs" class="mb-12 bg-white p-6 rounded-lg shadow">
+            <h2 class="text-2xl font-bold mb-4 border-b pb-2">Job Opportunities</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="border-l-4 border-green-600 pl-4">
+                    <h3 class="font-bold text-lg">Find Jobs</h3>
+                    <p class="text-gray-600 mb-4">Browse thousands of opportunities across Saudi Arabia</p>
+                    <button class="bg-green-600 text-white px-4 py-2 rounded">Search Jobs</button>
+                </div>
+                <div class="border-l-4 border-blue-600 pl-4">
+                    <h3 class="font-bold text-lg">Post Jobs</h3>
+                    <p class="text-gray-600 mb-4">Are you hiring? Post your vacancies here</p>
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded">Post a Job</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section id="contact" class="mb-12">
+            <h2 class="text-2xl font-bold mb-4 border-b pb-2">Contact Us</h2>
+            <form class="bg-white p-6 rounded-lg shadow">
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-gray-700 mb-2" for="name">Name</label>
+                        <input type="text" id="name" class="w-full px-3 py-2 border rounded">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2" for="email">Email</label>
+                        <input type="email" id="email" class="w-full px-3 py-2 border rounded">
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 mb-2" for="phone">Phone</label>
+                    <input type="tel" id="phone" class="w-full px-3 py-2 border rounded">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 mb-2" for="message">Message</label>
+                    <textarea id="message" rows="5" class="w-full px-3 py-2 border rounded"></textarea>
+                </div>
+                <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700">Submit</button>
+            </form>
+        </section>
+
+        <!-- Government Services -->
+        <section id="gov-services" class="mb-12">
+            <h2 class="text-2xl font-bold mb-4 border-b pb-2">Government Services</h2>
+            <div class="grid md:grid-cols-4 gap-4">
+                <a href="https://absher.sa" class="bg-white p-4 rounded shadow flex items-center hover:bg-gray-50">
+                    <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                        <span class="text-blue-600 font-bold">A</span>
+                    </div>
+                    <span>Absher</span>
+                </a>
+                <a href="https://www.my.gov.sa" class="bg-white p-4 rounded shadow flex items-center hover:bg-gray-50">
+                    <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                        <span class="text-green-600 font-bold">M</span>
+                    </div>
+                    <span>MyGov</span>
+                </a>
+                <!-- More government services... -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">About Saudi One</h3>
+                    <p>Your comprehensive guide to everything happening in Saudi Arabia.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-green-400">News</a></li>
+                        <li><a href="#" class="hover:text-green-400">Events</a></li>
+                        <li><a href="#" class="hover:text-green-400">Jobs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Cities</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-green-400">Riyadh</a></li>
+                        <li><a href="#" class="hover:text-green-400">Jeddah</a></li>
+                        <li><a href="#" class="hover:text-green-400">Dammam</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Connect</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-green-400">Twitter</a>
+                        <a href="#" class="hover:text-green-400">Instagram</a>
+                        <a href="#" class="hover:text-green-400">Facebook</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p>© 2023 Saudi One. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language selector functionality
+        document.getElementById('languageSelector').addEventListener('change', function() {
+            const lang = this.value;
+            // This would be replaced with actual translation logic
+            alert(`Language changed to ${lang === 'en' ? 'English' : 'Arabic'}`);
+        });
+
+        // City selector functionality
+        const cityBtns = document.querySelectorAll('.city-btn');
+        cityBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                cityBtns.forEach(b => b.classList.remove('bg-green-600', 'text-white'));
+                
+                // Add active class to clicked button
+                this.classList.add('bg-green-600', 'text-white');
+                
+                // Hide all city content
+                document.querySelectorAll('.city-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // Show selected city content
+                const cityId = this.getAttribute('data-city');
+                document.getElementById(`${cityId}-content`).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
